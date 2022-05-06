@@ -10,31 +10,26 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-
-
-
 @Getter @Setter
 @Entity
-@Table(name="portfolio", schema="proyectoPortfolio")
-
 public class fichaPersona {
 @Id    
-@Column (name = "persona_id")
 @GeneratedValue(strategy = GenerationType.AUTO)
+//@Column (name = "persona_id")
 private Long id;
-@Column (name = "persona_nombre")
+//@Column (name = "persona_nombre")
 private String nombre;
-@Column (name ="persona_apellido")
+//@Column (name ="persona_apellido")
 private String apellido;
-@Column (name = "persona_email")
+//@Column (name = "persona_email")
 private String email;
-@Column (name = "persona_telefono")
+//@Column (name = "persona_telefono")
 private String telefono;
-@Column (name = "persona_foto")
+//@Column (name = "persona_foto")
 private String fotopers;
-@Column (name = "persona_edad")
+//@Column (name = "persona_edad")
 private Long edad;
-@Column (name = "persona_resumen")
+//@Column (name = "persona_resumen")
 private String resumen;
 
 
