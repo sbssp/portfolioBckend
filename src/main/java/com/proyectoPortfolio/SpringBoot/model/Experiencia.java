@@ -15,28 +15,34 @@ import lombok.Setter;
 @Entity
 public class Experiencia {
 @Id
-@GeneratedValue(strategy = GenerationType.AUTO)
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Long id;
 private String puesto;
-private String Empresa;
-private String Descripcion;
+private String empresa;
+private String descripcion;
 private String fecha_desde;
 private String fecha_hasta;
+
 @ManyToOne (cascade = CascadeType.ALL)
-@JoinColumn(name = "persona_id")
-private fichaPersona perso;
+@JoinColumn(name = "persona_id", referencedColumnName = "id")
+private Persona persona;
 
 
 public Experiencia(){
     
 }
 
-    public Experiencia(String puesto, String Empresa, String Descripcion, String fecha_desde, String fecha_hasta) {
+    public Experiencia(Long id, String puesto, String empresa, String descripcion, String fecha_desde, String fecha_hasta, Persona perso) {
+        this.id = id;
         this.puesto = puesto;
-        this.Empresa = Empresa;
-        this.Descripcion = Descripcion;
+        this.empresa = empresa;
+        this.descripcion = descripcion;
         this.fecha_desde = fecha_desde;
         this.fecha_hasta = fecha_hasta;
+        this.persona = perso;
     }
+
+   
 
 
 

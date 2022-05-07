@@ -1,6 +1,8 @@
 
 package com.proyectoPortfolio.SpringBoot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -16,10 +18,9 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-//@Table (name = "Persona")
-public class fichaPersona {
+public class Persona {
 @Id    
-@GeneratedValue(strategy = GenerationType.AUTO)
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 //@Column (name = "persona_id")
 private Long id;
 //@Column (name = "persona_nombre")
@@ -36,15 +37,16 @@ private String fotopers;
 private Long edad;
 //@Column (name = "persona_resumen")
 private String resumen;
-@OneToMany(cascade = CascadeType.ALL)
-private Set<Experiencia> experiencia;
+@JsonIgnore
+@OneToMany(mappedBy= "persona")
+private Set<Experiencia> experiencia = new HashSet<>();
 
 
-public  fichaPersona(){
+public  Persona(){
 
 }
 
-    public fichaPersona(Long id, String nombre, String apellido, String email, String telefono, String fotopers, Long edad, String resumen, Set<Experiencia> experiencia) {
+    public Persona(Long id, String nombre, String apellido, String email, String telefono, String fotopers, Long edad, String resumen, Set<Experiencia> experiencia) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -53,8 +55,9 @@ public  fichaPersona(){
         this.fotopers = fotopers;
         this.edad = edad;
         this.resumen = resumen;
-        this.experiencia = experiencia;
     }
+
+   
 
  
   
