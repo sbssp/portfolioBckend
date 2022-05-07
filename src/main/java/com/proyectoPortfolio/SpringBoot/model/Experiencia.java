@@ -1,12 +1,17 @@
 
 package com.proyectoPortfolio.SpringBoot.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Getter @Setter
 @Entity
 public class Experiencia {
 @Id
@@ -16,6 +21,10 @@ private String Empresa;
 private String Descripcion;
 private String fecha_desde;
 private String fecha_hasta;
+@ManyToOne (cascade = CascadeType.ALL)
+@JoinColumn(name = "persona_id")
+private fichaPersona perso;
+
 
 public Experiencia(){
     

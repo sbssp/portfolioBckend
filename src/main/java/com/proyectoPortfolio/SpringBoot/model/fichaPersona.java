@@ -1,17 +1,22 @@
 
 package com.proyectoPortfolio.SpringBoot.model;
 
+import java.util.List;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
 @Entity
+//@Table (name = "Persona")
 public class fichaPersona {
 @Id    
 @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,13 +36,15 @@ private String fotopers;
 private Long edad;
 //@Column (name = "persona_resumen")
 private String resumen;
+@OneToMany(cascade = CascadeType.ALL)
+private Set<Experiencia> experiencia;
 
 
 public  fichaPersona(){
 
 }
 
-    public fichaPersona(Long id, String nombre, String apellido, String email, String telefono, String fotopers, Long edad, String resumen) {
+    public fichaPersona(Long id, String nombre, String apellido, String email, String telefono, String fotopers, Long edad, String resumen, Set<Experiencia> experiencia) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -46,8 +53,11 @@ public  fichaPersona(){
         this.fotopers = fotopers;
         this.edad = edad;
         this.resumen = resumen;
+        this.experiencia = experiencia;
     }
-    
+
+ 
+  
 
 }
 
