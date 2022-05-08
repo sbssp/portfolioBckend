@@ -163,7 +163,7 @@ public List<Proyectos> verProyectos(){
 public void agregarProyectos(@RequestBody Proyectos proyecto, @PathVariable Long id){
     Persona idpers = personaServ.buscarPersona(id);
     proyecto.setPersona_proy(idpers);
-    proyectoServ.agregarProyecto(proyecto);
+    proyectoServ.agregarProyecto(proyecto); 
 
 }
 

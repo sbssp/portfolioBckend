@@ -15,7 +15,7 @@ import lombok.Setter;
 @Entity
 public class Habilidades {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)   
+    @GeneratedValue(strategy = GenerationType.IDENTITY)   
     private Long id;
     private String habilidad;
     private String descripcion;
