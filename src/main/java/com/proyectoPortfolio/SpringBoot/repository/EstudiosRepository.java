@@ -1,11 +1,11 @@
 
 package com.proyectoPortfolio.SpringBoot.repository;
 
-import com.proyectoPortfolio.SpringBoot.model.Experiencia;
+import com.proyectoPortfolio.SpringBoot.model.Estudios;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ExperienciaRepository extends JpaRepository <Experiencia, Long> {
+public interface EstudiosRepository extends JpaRepository <Estudios, Long> {
     
 }

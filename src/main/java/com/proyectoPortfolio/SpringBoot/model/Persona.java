@@ -2,6 +2,7 @@
 package com.proyectoPortfolio.SpringBoot.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -20,33 +21,31 @@ import lombok.Setter;
 @Entity
 public class Persona {
 @Id    
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-//@Column (name = "persona_id")
+@GeneratedValue(strategy = GenerationType.AUTO)
 private Long id;
-//@Column (name = "persona_nombre")
 private String nombre;
-//@Column (name ="persona_apellido")
 private String apellido;
-//@Column (name = "persona_email")
 private String email;
-//@Column (name = "persona_telefono")
 private String telefono;
-//@Column (name = "persona_foto")
 private String fotopers;
-//@Column (name = "persona_edad")
 private Long edad;
-//@Column (name = "persona_resumen")
 private String resumen;
-@JsonIgnore
-@OneToMany(mappedBy= "persona")
-private Set<Experiencia> experiencia = new HashSet<>();
+@OneToMany(mappedBy = "persona_exp", cascade = CascadeType.ALL, orphanRemoval = true)
+private List<Experiencia> experiencia = new ArrayList<Experiencia>();
+@OneToMany(mappedBy = "persona_hab", cascade = CascadeType.ALL, orphanRemoval = true)
+private List<Habilidades> habilidades = new ArrayList<Habilidades>();
+@OneToMany(mappedBy = "persona_proy", cascade = CascadeType.ALL, orphanRemoval = true)
+private List<Proyectos> proyectos = new ArrayList<Proyectos>();
+@OneToMany(mappedBy = "persona_est", cascade = CascadeType.ALL, orphanRemoval = true)
+private List<Estudios> estudios = new ArrayList<Estudios>();
+
 
 
 public  Persona(){
 
 }
 
-    public Persona(Long id, String nombre, String apellido, String email, String telefono, String fotopers, Long edad, String resumen, Set<Experiencia> experiencia) {
+    public Persona(Long id, String nombre, String apellido, String email, String telefono, String fotopers, Long edad, String resumen) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -56,6 +55,10 @@ public  Persona(){
         this.edad = edad;
         this.resumen = resumen;
     }
+
+   
+
+
 
    
 

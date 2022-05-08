@@ -15,7 +15,7 @@ public class PersonaService implements IPersonaService{
 public PersonaRepository personaRepo;
 
     @Override
-    public List<Persona> crearPersona() {
+    public List<Persona> verPersona() {
         return personaRepo.findAll();
     }
 
@@ -30,9 +30,12 @@ public PersonaRepository personaRepo;
     }
 
     @Override
-    public void buscarPersona(Long id) {
-        personaRepo.findById(id).get();
+    public Persona buscarPersona(Long id) {
+        return personaRepo.findById(id).orElse(null);
     }
+
+    
 
 
 }
+        
