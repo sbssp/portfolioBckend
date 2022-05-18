@@ -18,7 +18,6 @@ public class Habilidades {
     @GeneratedValue(strategy = GenerationType.IDENTITY)   
     private Long id;
     private String habilidad;
-    private String descripcion;
     private Long dominio;
     @ManyToOne 
     @JoinColumn(name = "persona_id")
@@ -29,10 +28,9 @@ public class Habilidades {
         
     }
 
-    public Habilidades(Long id, String habilidad, String descripcion, Long dominio, Persona persona_hab) {
+    public Habilidades(Long id, String habilidad, Long dominio, Persona persona_hab) {
         this.id = id;
         this.habilidad = habilidad;
-        this.descripcion = descripcion;
         this.dominio = dominio;
         this.persona_hab = persona_hab;
     }

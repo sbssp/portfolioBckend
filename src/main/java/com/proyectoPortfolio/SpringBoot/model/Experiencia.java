@@ -21,6 +21,7 @@ private String empresa;
 private String descripcion;
 private String fecha_desde;
 private String fecha_hasta;
+private String icono;
 @ManyToOne
 @JoinColumn(name = "persona_id")
 private Persona persona_exp;
@@ -30,7 +31,7 @@ public Experiencia(){
     
 }
 
-    public Experiencia(Long id, String puesto, String empresa, String descripcion, String fecha_desde, String fecha_hasta, Persona persona_exp) {
+    public Experiencia(Long id, String puesto, String empresa, String descripcion, String fecha_desde, String fecha_hasta, String icono, Persona persona_exp) {
         this.id = id;
         this.puesto = puesto;
         this.empresa = empresa;
@@ -38,6 +39,7 @@ public Experiencia(){
         this.fecha_desde = fecha_desde;
         this.fecha_hasta = fecha_hasta;
         this.persona_exp = persona_exp;
+        this.icono = icono;
     }
 
     
