@@ -23,22 +23,18 @@ public class Proyectos {
     private String descripcion;
     private String fecha;
     private String imagen;
-    @ManyToOne
-    @JoinColumn(name="persona_id")
-    private Persona persona_proy;
-    
+
     
     public Proyectos (){
         
     }
 
-    public Proyectos(Long id, String nombre, String enlace, String descripcion, String fecha,String imagen, Persona persona_proy) {
+    public Proyectos(Long id, String nombre, String enlace, String descripcion, String fecha,String imagen) {
         this.id = id;
         this.nombre = nombre;
         this.enlace = enlace;
         this.descripcion = descripcion;
         this.fecha = fecha;
-        this.persona_proy = persona_proy;
         this.imagen = imagen;
     }
 

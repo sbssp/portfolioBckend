@@ -80,10 +80,8 @@ public List<Experiencia> verExperiencia(){
     return experienciaServ.verExperiencia();
 }
 
-@PutMapping("/new/experiencia/{id}")
-public void agregarExperiencia(@RequestBody Experiencia experiencia, @PathVariable Long id){
-    Persona idpers = personaServ.buscarPersona(id);
-    experiencia.setPersona_exp(idpers);
+@PostMapping("/new/experiencia")
+public void agregarExperiencia(@RequestBody Experiencia experiencia){
     experienciaServ.agregarExperiencia(experiencia);
 
 }
@@ -110,7 +108,6 @@ public List<Habilidades> verHabilidades(){
 @PutMapping("/new/habilidades/{id}")
 public void agregarHabilidades(@RequestBody Habilidades habilidades, @PathVariable Long id){
     Persona idpers = personaServ.buscarPersona(id);
-    habilidades.setPersona_hab(idpers);
     habilidadesServ.agregarHabilidades(habilidades);
 
 }
@@ -136,8 +133,6 @@ public List<Estudios> verEstudios(){
 
 @PutMapping("/new/estudios/{id}")
 public void agregarEstudios(@RequestBody Estudios estudios, @PathVariable Long id){
-    Persona idpers = personaServ.buscarPersona(id);
-    estudios.setPersona_est(idpers);
     estudiosServ.agregarEstudios(estudios);
 
 }
@@ -163,8 +158,6 @@ public List<Proyectos> verProyectos(){
 
 @PutMapping("/new/proyectos/{id}")
 public void agregarProyectos(@RequestBody Proyectos proyecto, @PathVariable Long id){
-    Persona idpers = personaServ.buscarPersona(id);
-    proyecto.setPersona_proy(idpers);
     proyectoServ.agregarProyecto(proyecto); 
 
 }

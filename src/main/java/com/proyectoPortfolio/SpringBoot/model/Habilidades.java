@@ -19,20 +19,15 @@ public class Habilidades {
     private Long id;
     private String habilidad;
     private Long dominio;
-    @ManyToOne 
-    @JoinColumn(name = "persona_id")
-    private Persona persona_hab;
-    
-    
+
     public Habilidades (){
         
     }
 
-    public Habilidades(Long id, String habilidad, Long dominio, Persona persona_hab) {
+    public Habilidades(Long id, String habilidad, Long dominio) {
         this.id = id;
         this.habilidad = habilidad;
         this.dominio = dominio;
-        this.persona_hab = persona_hab;
     }
     
     

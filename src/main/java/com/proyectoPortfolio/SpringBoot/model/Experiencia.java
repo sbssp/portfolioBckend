@@ -22,23 +22,19 @@ private String descripcion;
 private String fecha_desde;
 private String fecha_hasta;
 private String icono;
-@ManyToOne
-@JoinColumn(name = "persona_id")
-private Persona persona_exp;
 
 
 public Experiencia(){
     
 }
 
-    public Experiencia(Long id, String puesto, String empresa, String descripcion, String fecha_desde, String fecha_hasta, String icono, Persona persona_exp) {
+    public Experiencia(Long id, String puesto, String empresa, String descripcion, String fecha_desde, String fecha_hasta, String icono) {
         this.id = id;
         this.puesto = puesto;
         this.empresa = empresa;
         this.descripcion = descripcion;
         this.fecha_desde = fecha_desde;
         this.fecha_hasta = fecha_hasta;
-        this.persona_exp = persona_exp;
         this.icono = icono;
     }
 
