@@ -34,6 +34,11 @@ public PersonaRepository personaRepo;
         return personaRepo.findById(id).orElse(null);
     }
 
+    @Override
+    public Persona editarPersona(Persona persona) {
+        return personaRepo.save(persona);
+    }
+
     
 
 

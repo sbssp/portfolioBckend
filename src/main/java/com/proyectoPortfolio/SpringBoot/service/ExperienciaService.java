@@ -33,6 +33,11 @@ ExperienciaRepository experienciaRepo;
         return experienciaRepo.findById(id).orElse(null);
     }
 
+    @Override
+    public Experiencia editarExperiencia(Experiencia experiencia) {
+        return experienciaRepo.save(experiencia);
+    }
+
 
  
 

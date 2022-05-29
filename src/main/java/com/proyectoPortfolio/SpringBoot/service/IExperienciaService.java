@@ -11,5 +11,5 @@ public List<Experiencia> verExperiencia();
 public void agregarExperiencia(Experiencia experiencia);
 public void borrarExperiencia(Long id);
 public Experiencia buscarExperiencia(Long id);
-
+public Experiencia editarExperiencia(Experiencia experiencia);
 }

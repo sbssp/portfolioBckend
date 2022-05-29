@@ -34,5 +34,9 @@ ProyectosRepository proyectoRepo;
         return proyectoRepo.findById(id).orElse(null);
     }
 
+    @Override
+    public Proyectos editarProyecto(Proyectos proyecto) {
+        return proyectoRepo.save(proyecto);    }
+
     
 }

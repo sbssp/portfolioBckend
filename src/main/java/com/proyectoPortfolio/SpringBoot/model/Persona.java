@@ -1,6 +1,7 @@
 
 package com.proyectoPortfolio.SpringBoot.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +20,9 @@ private String apellido;
 private String email;
 private String telefono;
 private String fotopers;
+private String link;
 private Long edad;
+@Column(columnDefinition = "LONGTEXT")
 private String resumen;
 
 
@@ -28,7 +31,7 @@ public  Persona(){
 
 }
 
-    public Persona(Long id, String nombre, String apellido, String email, String telefono, String fotopers, Long edad, String resumen) {
+    public Persona(Long id, String nombre, String apellido, String email, String telefono, String fotopers, Long edad, String resumen, String link) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -37,6 +40,8 @@ public  Persona(){
         this.fotopers = fotopers;
         this.edad = edad;
         this.resumen = resumen;
+        this.link = link;
+
     }
 
    

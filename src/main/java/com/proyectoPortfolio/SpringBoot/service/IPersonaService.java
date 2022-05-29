@@ -11,5 +11,7 @@ public List<Persona> verPersona();
 public void agregarPersona(Persona persona);
 public void borrarPersona(Long id);
 public Persona buscarPersona(Long id);
+public Persona editarPersona(Persona persona);
+
 
 }

@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -55,20 +55,22 @@ public List<Persona> verPersona(){
     return personaServ.verPersona();
 }
 
-@PutMapping("/new/persona")
+@PostMapping("/new/persona")
 public void agregarPersona(@RequestBody Persona persona){
     personaServ.agregarPersona(persona);
 }
 
-@GetMapping("/buscar/persona/{id}")
-public void buscarPersona(@PathVariable Long id){
-    personaServ.buscarPersona(id);
+@PutMapping("/editar/persona")
+public void editarPersona(@RequestBody Persona persona){
+    personaServ.editarPersona(persona);
+
 }
 
-@PostMapping("/borrar/persona/{id}")
-public void borrarPersona(@PathVariable Long id){
-    personaServ.borrarPersona(id);
+@GetMapping("/buscar/persona/{id}")
+public Persona buscarPersona(@PathVariable Long id){
+    return personaServ.buscarPersona(id);
 }
+
 
 
 
@@ -86,14 +88,20 @@ public void agregarExperiencia(@RequestBody Experiencia experiencia){
 
 }
 
-@GetMapping("/buscar/experiencia/{id}")
-public void buscarExperiencia(@PathVariable Long id){
-    experienciaServ.buscarExperiencia(id);
+@PutMapping("/editar/experiencia")
+public void editarExperiencia(@RequestBody Experiencia experiencia){
+    experienciaServ.editarExperiencia(experiencia);
+
 }
 
-@PostMapping("/borrar/experiencia/{id}")
+@GetMapping("/buscar/experiencia/{id}")
+public Experiencia buscarExperiencia(@PathVariable Long id){
+    return experienciaServ.buscarExperiencia(id);
+}
+
+@DeleteMapping("/borrar/experiencia/{id}")
 public void borrarExperiencia(@PathVariable Long id){
-    experienciaServ.borrarExperiencia(id);
+     experienciaServ.borrarExperiencia(id);
 }
 
 
@@ -105,22 +113,28 @@ public List<Habilidades> verHabilidades(){
     return habilidadesServ.verHabilidades();
 }
 
-@PutMapping("/new/habilidades/{id}")
-public void agregarHabilidades(@RequestBody Habilidades habilidades, @PathVariable Long id){
-    Persona idpers = personaServ.buscarPersona(id);
+@PostMapping("/new/habilidades")
+public void agregarHabilidades(@RequestBody Habilidades habilidades){
     habilidadesServ.agregarHabilidades(habilidades);
 
 }
 
-@GetMapping("/buscar/habilidades/{id}")
-public void buscarHabilidades(@PathVariable Long id){
-    habilidadesServ.buscarHabilidades(id);
+@PutMapping("/editar/habilidades")
+public void editarHabilidades(@RequestBody Habilidades habilidades){
+    habilidadesServ.editarHabilidades(habilidades);
+
 }
 
-@PostMapping("/borrar/habilidades/{id}")
-public void borrarHabilidades(@PathVariable Long id){
-    habilidadesServ.borrarHabilidades(id);
+@GetMapping("/buscar/habilidades/{id}")
+public Habilidades buscarHabilidades(@PathVariable Long id){
+    return habilidadesServ.buscarHabilidades(id);
 }
+
+@DeleteMapping("/borrar/habilidades/{id}")
+public void borrarHabilidades(@PathVariable Long id){
+     habilidadesServ.borrarHabilidades(id);
+}
+
 
 
 //Controladores de Estudios
@@ -131,21 +145,28 @@ public List<Estudios> verEstudios(){
     return estudiosServ.verEstudios();
 }
 
-@PutMapping("/new/estudios/{id}")
-public void agregarEstudios(@RequestBody Estudios estudios, @PathVariable Long id){
+@PostMapping("/new/estudios")
+public void agregarEstudios(@RequestBody Estudios estudios){
     estudiosServ.agregarEstudios(estudios);
 
 }
 
-@GetMapping("/buscar/estudios/{id}")
-public void buscarEstudios(@PathVariable Long id){
-    estudiosServ.buscarEstudios(id);
+@PutMapping("/editar/estudios")
+public void editarEstudios(@RequestBody Estudios estudios){
+    estudiosServ.editarEstudios(estudios);
+
 }
 
-@PostMapping("/borrar/estudios/{id}")
-public void borrarEstudios(@PathVariable Long id){
-    estudiosServ.borrarEstudios(id);
+@GetMapping("/buscar/estudios/{id}")
+public Estudios buscarEstudios(@PathVariable Long id){
+    return estudiosServ.buscarEstudios(id);
 }
+
+@DeleteMapping("/borrar/estudios/{id}")
+public void borrarEstudios(@PathVariable Long id){
+     estudiosServ.borrarEstudios(id);
+}
+
 
 
 //Controladores de Proyectos
@@ -156,21 +177,28 @@ public List<Proyectos> verProyectos(){
     return proyectoServ.verProyectos();
 }
 
-@PutMapping("/new/proyectos/{id}")
-public void agregarProyectos(@RequestBody Proyectos proyecto, @PathVariable Long id){
-    proyectoServ.agregarProyecto(proyecto); 
+@PostMapping("/new/proyectos")
+public void agregarProyecto(@RequestBody Proyectos proyecto){
+    proyectoServ.agregarProyecto(proyecto);
+
+}
+
+@PutMapping("/editar/proyectos")
+public void editarProyecto(@RequestBody Proyectos proyecto){
+    proyectoServ.editarProyecto(proyecto);
 
 }
 
 @GetMapping("/buscar/proyectos/{id}")
-public void buscarProyectos(@PathVariable Long id){
-    proyectoServ.buscarProyecto(id);
+public Proyectos buscarProyectos(@PathVariable Long id){
+    return proyectoServ.buscarProyecto(id);
 }
 
-@PostMapping("/borrar/proyectos/{id}")
+@DeleteMapping("/borrar/proyectos/{id}")
 public void borrarProyecto(@PathVariable Long id){
-    proyectoServ.borrarProyecto(id);
+     proyectoServ.borrarProyecto(id);
 }
+
 
 
 

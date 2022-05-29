@@ -1,12 +1,11 @@
 
 package com.proyectoPortfolio.SpringBoot.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +17,7 @@ public class Experiencia {
 private Long id;
 private String puesto;
 private String empresa;
+@Column(columnDefinition = "LONGTEXT")
 private String descripcion;
 private String fecha_desde;
 private String fecha_hasta;

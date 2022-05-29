@@ -11,4 +11,6 @@ public List<Proyectos> verProyectos();
 public void agregarProyecto(Proyectos proyecto);
 public void borrarProyecto(Long id);
 public Proyectos buscarProyecto(Long id);
+public Proyectos editarProyecto(Proyectos proyectos);
+
 }

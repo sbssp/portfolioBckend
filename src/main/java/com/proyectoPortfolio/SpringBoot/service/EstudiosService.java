@@ -33,5 +33,9 @@ EstudiosRepository estudiosRepo;
     public Estudios buscarEstudios(Long id) {
         return estudiosRepo.findById(id).orElse(null);
     }
+
+    @Override
+    public Estudios editarEstudios(Estudios estudio) {
+        return estudiosRepo.save(estudio);    }
     
 }

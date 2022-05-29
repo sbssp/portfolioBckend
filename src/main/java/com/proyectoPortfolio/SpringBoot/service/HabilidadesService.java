@@ -33,5 +33,9 @@ HabilidadesRepository habilidadesRepo;
     public Habilidades buscarHabilidades(Long id) {
         return habilidadesRepo.findById(id).orElse(null);
     }
+
+    @Override
+    public Habilidades editarHabilidades(Habilidades habilidades) {
+        return habilidadesRepo.save(habilidades);    }
     
 }

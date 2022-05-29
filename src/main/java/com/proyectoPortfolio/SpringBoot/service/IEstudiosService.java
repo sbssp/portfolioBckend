@@ -1,4 +1,4 @@
-
+    
 package com.proyectoPortfolio.SpringBoot.service;
 
 import com.proyectoPortfolio.SpringBoot.model.Estudios;
@@ -11,4 +11,6 @@ public List<Estudios> verEstudios();
 public void agregarEstudios(Estudios estudio);
 public void borrarEstudios(Long id);
 public Estudios buscarEstudios(Long id);
+public Estudios editarEstudios(Estudios estudio);
+
 }
