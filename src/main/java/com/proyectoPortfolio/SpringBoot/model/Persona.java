@@ -27,6 +27,7 @@ private String resumen;
 
 
 
+
 public  Persona(){
 
 }
