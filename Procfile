@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT
+web: java $JAVA_OPTS -jar target/SpringBoot-0.0.1-SNAPSHOT.jar -runner.jar --port $PORT
