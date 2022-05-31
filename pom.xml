@@ -96,7 +96,6 @@
 						</exclude>
 					</excludes>
             
-                <mainClass>com.proyectoPortfolio.SpringBoot</mainClass>
             
 				</configuration>
 			</plugin>
