@@ -88,7 +88,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-			 	    <mainClass>com.proyectoPortfolio.SpringBoot</mainClass>
+			 	    <mainClass>com.proyectoPortfolio.SpringBoot.Application</mainClass>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
