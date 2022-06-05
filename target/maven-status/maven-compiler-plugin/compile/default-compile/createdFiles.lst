@@ -3,7 +3,6 @@ com\proyectoPortfolio\SpringBoot\SpringBootSecurityJwtApplication.class
 com\proyectoPortfolio\SpringBoot\repository\ProyectosRepository.class
 com\proyectoPortfolio\SpringBoot\model\Habilidades.class
 com\proyectoPortfolio\SpringBoot\model\Proyectos.class
-com\proyectoPortfolio\SpringBoot\controller\testcontroller.class
 com\proyectoPortfolio\SpringBoot\model\Role.class
 com\proyectoPortfolio\SpringBoot\model\Experiencia.class
 com\proyectoPortfolio\SpringBoot\response\MessageResponse.class
